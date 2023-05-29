@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.0","implementation":{"name":"cucumber-jvm","version":"6.9.0"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"25.281-b09"},"os":{"name":"Mac OS X"},"cpu":{"name":"x86_64"}}},{"testRunStarted":{"timestamp":{"seconds":"1683905596","nanos":821000000}}},{"source":{"uri":"file:///Users/eliseluk/Desktop/AutomationBasic/PizzaHutDemo/AppsDemo/AppiumPizzaHutDemo1/src/test/resources/features/S1_FirstTest.feature","data":"Feature: First Test\n\n  # For IOS\n#  Scenario: Allow Alert\n#    Given I allow notification\n\n\n  Scenario: Launch Test\n    Given I click HK button","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///Users/eliseluk/Desktop/AutomationBasic/PizzaHutDemo/AppsDemo/AppiumPizzaHutDemo1/src/test/resources/features/S1_FirstTest.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"First Test","children":[{"scenario":{"location":{"line":8,"column":3},"keyword":"Scenario","name":"Launch Test","steps":[{"location":{"line":9,"column":5},"keyword":"Given ","text":"I click HK button","id":"2dda66b2-cc10-4e4c-800c-91f55ea8a142"}],"id":"0d8f4277-e4dd-45c8-a57d-62253dd9cfe2"}}]},"comments":[{"location":{"line":3,"column":1},"text":"  # For IOS"},{"location":{"line":4,"column":1},"text":"#  Scenario: Allow Alert"},{"location":{"line":5,"column":1},"text":"#    Given I allow notification"}]}},{"pickle":{"id":"0a67f006-67d1-4a4e-8945-48de52e37e75","uri":"file:///Users/eliseluk/Desktop/AutomationBasic/PizzaHutDemo/AppsDemo/AppiumPizzaHutDemo1/src/test/resources/features/S1_FirstTest.feature","name":"Launch Test","language":"en","steps":[{"text":"I click HK button","id":"329f1699-da14-4c09-b72f-05c0bdacfbc9","astNodeIds":["2dda66b2-cc10-4e4c-800c-91f55ea8a142"]}],"astNodeIds":["0d8f4277-e4dd-45c8-a57d-62253dd9cfe2"]}},{"source":{"uri":"file:///Users/eliseluk/Desktop/AutomationBasic/PizzaHutDemo/AppsDemo/AppiumPizzaHutDemo1/src/test/resources/features/S2_SecondTest.feature","data":"Feature: Second Test\n\n  Scenario: Scroll to start page\n    Given I am on the scrollable page\n    Then I scroll the view from right to left\n    Then I click Start button","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///Users/eliseluk/Desktop/AutomationBasic/PizzaHutDemo/AppsDemo/AppiumPizzaHutDemo1/src/test/resources/features/S2_SecondTest.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Second Test","children":[{"scenario":{"location":{"line":3,"column":3},"keyword":"Scenario","name":"Scroll to start page","steps":[{"location":{"line":4,"column":5},"keyword":"Given ","text":"I am on the scrollable page","id":"1a2347e5-f20f-4729-ba8a-8ab61ed721a8"},{"location":{"line":5,"column":5},"keyword":"Then ","text":"I scroll the view from right to left","id":"53eb7329-5f33-401f-96d3-f09c3bba4f08"},{"location":{"line":6,"column":5},"keyword":"Then ","text":"I click Start button","id":"82ee491c-c281-44c4-97c9-8dc00e4f11b6"}],"id":"4ada33f6-7e7c-498b-8f5b-15ea198a8cfc"}}]}}},{"pickle":{"id":"728dbc00-cb4e-420c-929f-7f28f6b637dc","uri":"file:///Users/eliseluk/Desktop/AutomationBasic/PizzaHutDemo/AppsDemo/AppiumPizzaHutDemo1/src/test/resources/features/S2_SecondTest.feature","name":"Scroll to start page","language":"en","steps":[{"text":"I am on the scrollable page","id":"f00b67bf-d663-4672-8417-a28863807c52","astNodeIds":["1a2347e5-f20f-4729-ba8a-8ab61ed721a8"]},{"text":"I scroll the view from right to left","id":"d4785566-df56-451a-992f-b38a8b219bee","astNodeIds":["53eb7329-5f33-401f-96d3-f09c3bba4f08"]},{"text":"I click Start button","id":"fd97b847-1fe0-40ad-bd8a-0c98d2d3e27c","astNodeIds":["82ee491c-c281-44c4-97c9-8dc00e4f11b6"]}],"astNodeIds":["4ada33f6-7e7c-498b-8f5b-15ea198a8cfc"]}},{"source":{"uri":"file:///Users/eliseluk/Desktop/AutomationBasic/PizzaHutDemo/AppsDemo/AppiumPizzaHutDemo1/src/test/resources/features/S3_ThirdTest.feature","data":"Feature: Third Test\n\n  Scenario: Login Test\n    Given Open Side Menu\n    When I click the Avatar to open Login page\n    And I submit the following credentials to login\n      | John | testerJohn |\n      | Mary | maryann |\n      | 98475521 | E123456 |","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///Users/eliseluk/Desktop/AutomationBasic/PizzaHutDemo/AppsDemo/AppiumPizzaHutDemo1/src/test/resources/features/S3_ThirdTest.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Third Test","children":[{"scenario":{"location":{"line":3,"column":3},"keyword":"Scenario","name":"Login Test","steps":[{"location":{"line":4,"column":5},"keyword":"Given ","text":"Open Side Menu","id":"945bda8a-707b-4508-bae9-2bafc1063aca"},{"location":{"line":5,"column":5},"keyword":"When ","text":"I click the Avatar to open Login page","id":"e03b85d7-d6d9-4261-8af6-fe2026c0596e"},{"location":{"line":6,"column":5},"keyword":"And ","text":"I submit the following credentials to login","dataTable":{"location":{"line":7,"column":7},"rows":[{"location":{"line":7,"column":7},"cells":[{"location":{"line":7,"column":9},"value":"John"},{"location":{"line":7,"column":16},"value":"testerJohn"}],"id":"21ff122a-a89e-43ea-9bea-03da597cfe6f"},{"location":{"line":8,"column":7},"cells":[{"location":{"line":8,"column":9},"value":"Mary"},{"location":{"line":8,"column":16},"value":"maryann"}],"id":"9823ad54-97fb-489b-a247-b3cc6403f51f"},{"location":{"line":9,"column":7},"cells":[{"location":{"line":9,"column":9},"value":"98475521"},{"location":{"line":9,"column":20},"value":"E123456"}],"id":"f5c67160-379e-4892-b896-f58bad97aa48"}]},"id":"bb59c4e7-bf77-47e1-9beb-707eeb2a943a"}],"id":"d1f9e89b-3bb2-424c-b24c-086c698f9bdb"}}]}}},{"pickle":{"id":"8c406d61-b5aa-438d-ab47-fc32aa6b8d69","uri":"file:///Users/eliseluk/Desktop/AutomationBasic/PizzaHutDemo/AppsDemo/AppiumPizzaHutDemo1/src/test/resources/features/S3_ThirdTest.feature","name":"Login Test","language":"en","steps":[{"text":"Open Side Menu","id":"9227ddb3-a887-445b-98d0-0cd861dc00e7","astNodeIds":["945bda8a-707b-4508-bae9-2bafc1063aca"]},{"text":"I click the Avatar to open Login page","id":"2474585d-ef38-41f8-b292-0c3d7c651ddc","astNodeIds":["e03b85d7-d6d9-4261-8af6-fe2026c0596e"]},{"text":"I submit the following credentials to login","argument":{"dataTable":{"rows":[{"cells":[{"value":"John"},{"value":"testerJohn"}]},{"cells":[{"value":"Mary"},{"value":"maryann"}]},{"cells":[{"value":"98475521"},{"value":"E123456"}]}]}},"id":"7e94c641-80fd-4c5d-b77f-b3a226973092","astNodeIds":["bb59c4e7-bf77-47e1-9beb-707eeb2a943a"]}],"astNodeIds":["d1f9e89b-3bb2-424c-b24c-086c698f9bdb"]}},{"testCase":{"id":"39fbe46e-2a44-4230-b9cd-3848d6ae816c","pickleId":"0a67f006-67d1-4a4e-8945-48de52e37e75","testSteps":[{"id":"f9aff85a-92b9-49ae-ac68-789955c4ef0c","pickleStepId":"329f1699-da14-4c09-b72f-05c0bdacfbc9","stepDefinitionIds":["3d3e014b-58a5-4784-bbc4-5ebcc028d281"],"stepMatchArgumentsLists":[{}]}]}},{"testCaseStarted":{"timestamp":{"seconds":"1683905597","nanos":73000000},"testCaseId":"39fbe46e-2a44-4230-b9cd-3848d6ae816c","id":"d2fc75ab-188d-470d-800c-d4153e6fcd3e"}},{"testStepStarted":{"timestamp":{"seconds":"1683905597","nanos":87000000},"testStepId":"f9aff85a-92b9-49ae-ac68-789955c4ef0c","testCaseStartedId":"d2fc75ab-188d-470d-800c-d4153e6fcd3e"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":325000000}},"timestamp":{"seconds":"1683905597","nanos":412000000},"testStepId":"f9aff85a-92b9-49ae-ac68-789955c4ef0c","testCaseStartedId":"d2fc75ab-188d-470d-800c-d4153e6fcd3e"}},{"testCaseFinished":{"timestamp":{"seconds":"1683905597","nanos":433000000},"testCaseStartedId":"d2fc75ab-188d-470d-800c-d4153e6fcd3e"}},{"testCase":{"id":"9a941e35-07ed-4987-98fc-da8d581214a4","pickleId":"728dbc00-cb4e-420c-929f-7f28f6b637dc","testSteps":[{"id":"4af1722e-0491-45b7-9f70-503e5c203ca8","pickleStepId":"f00b67bf-d663-4672-8417-a28863807c52","stepDefinitionIds":["a8b596ad-ccaf-4686-a945-08749d1c3cc1"],"stepMatchArgumentsLists":[{}]},{"id":"76a39e46-851f-4c35-9cee-956615b92669","pickleStepId":"d4785566-df56-451a-992f-b38a8b219bee","stepDefinitionIds":["b9e63793-f541-4da8-8099-798cb390d691"],"stepMatchArgumentsLists":[{}]},{"id":"52c393f6-3e96-4972-aec6-78eb7984e398","pickleStepId":"fd97b847-1fe0-40ad-bd8a-0c98d2d3e27c","stepDefinitionIds":["8cedfb44-998e-42da-b479-67c25808e6b8"],"stepMatchArgumentsLists":[{}]}]}},{"testCaseStarted":{"timestamp":{"seconds":"1683905597","nanos":465000000},"testCaseId":"9a941e35-07ed-4987-98fc-da8d581214a4","id":"50b00949-adf4-40f7-ba5d-c2b40605c1f4"}},{"testStepStarted":{"timestamp":{"seconds":"1683905597","nanos":466000000},"testStepId":"4af1722e-0491-45b7-9f70-503e5c203ca8","testCaseStartedId":"50b00949-adf4-40f7-ba5d-c2b40605c1f4"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"80","nanos":7000000}},"timestamp":{"seconds":"1683905677","nanos":473000000},"testStepId":"4af1722e-0491-45b7-9f70-503e5c203ca8","testCaseStartedId":"50b00949-adf4-40f7-ba5d-c2b40605c1f4"}},{"testStepStarted":{"timestamp":{"seconds":"1683905677","nanos":535000000},"testStepId":"76a39e46-851f-4c35-9cee-956615b92669","testCaseStartedId":"50b00949-adf4-40f7-ba5d-c2b40605c1f4"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"365","nanos":177000000}},"timestamp
